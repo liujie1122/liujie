@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.liujie</groupId>
+	<artifactId>maven-demo</artifactId>
+	<version>1.0.1-RELEASES</version>
+	<name>maven-demo</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<distributionManagement>
+		<!--发行版-->
+		<repository>
+			<id>releases</id>
+			<name>releases</name>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+		<!--测试版-->
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://localhost:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<!--
+	 项目部署到私服配置   
+	<distributionManagement>
+		 远程部署管理信息 
+		发行版
+		<repository>部署项目产生的构件到远程仓库需要的信息
+			<id>releases</id>
+			<name>Internal Release</name>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+		测试版
+		<snapshotRepository>   如果没有配置该元素，默认部署到repository元素配置的仓库 
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://localhost:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	-->
+
+</project>
