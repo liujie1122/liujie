@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.liujie</groupId>
-	<artifactId>cookie-session</artifactId>
+	<artifactId>beans-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cookie-session</name>
+	<name>beans-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -21,28 +21,34 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-		<!--fastjson依赖-->
+		<!--通过注解可以对bean对象进行校验，避免复杂繁琐的if-elas校验-->
+		<!--jsr 303-->
+		<!--<dependency>-->
+			<!--<groupId>javax.validation</groupId>-->
+			<!--<artifactId>validation-api</artifactId>-->
+			<!--<version>1.1.0.Final</version>-->
+		<!--</dependency>-->
+		<!-- hibernate validator-->
 		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>1.2.46</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.0.Final</version>
 		</dependency>
-
-		<!--swagger2依赖-->
+		<!--swagger2依赖,自动生成API接口文档-->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -52,6 +58,13 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.5.0</version>
+		</dependency>
+
+		<!--fastjson依赖-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.46</version>
 		</dependency>
 
 	</dependencies>
